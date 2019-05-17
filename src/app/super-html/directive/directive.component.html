@@ -1,0 +1,101 @@
+Friends:{{friends}}
+<br>
+<br>
+<div>
+  <table class="tablestripe">
+      <thead>
+          <tr>
+            <th>Friend Name</th>
+            <th>Counter</th>
+          </tr>
+      </thead>
+    <tbody>
+        <tr *ngFor="let f of friends; let counter = index">
+          <td>{{ f }}</td>
+          <td>Counter Name:{{ counter }}</td>
+          <td><button (click)="displayText(counter)">Click{{f}}</button></td>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+  <div> Demo for *ngFor array
+        <table border="5px" >
+            <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>City</th>
+                  <th>STD</th>
+                </tr>
+            </thead>
+          <tbody>
+            <tr *ngFor="let l of locations; let counter = index">
+              <td>{{l.id}}</td>
+              <td>{{l.city}}</td>
+              <td>{{l.code}}</td>
+            </tr>
+          </tbody>
+      </table>
+  </div>
+  <div> Demo for *ngFor users
+      <table border="10px" >
+          <thead>
+              <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Zipcode</th>
+                <th>Latitude</th>
+                <th>longitude</th>
+              </tr>
+          </thead>
+        <tbody>
+          <tr *ngFor="let u of users">
+            <td>{{u.id}}</td>
+            <td>{{u.username}}</td>
+            <td>{{u.address.zipcode}}</td>
+            <td>{{u.address.geo.lat}}</td>
+            <td>{{u.address.geo.lng}}</td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+
+<div> Demo for *ngIf directive
+    <button (click)="toggleCheck()">Toggle Check</button>
+    <div class="box" *ngIf="check">
+      
+    </div>
+</div>
+<div> Demo for *ngIf directive with else criteria
+    <button (click)="toggleCheckelse()">Toggle Check</button>
+    <div class="yesbox" *ngIf="checkelse; else elseTemplate">
+      I am here!!!
+      <button>T</button>
+    </div>
+    <ng-template #elseTemplate>
+      <div class="nobox">
+        Hip Hup Hurray!!!!!!:P
+      </div>
+    </ng-template>
+</div>
+<hr>
+<div> Demo for *ngSwitch directive with else criteria
+  <div [ngSwitch]="city">
+<span *ngSwitchCase="'chn'">Chennai</span>
+<span *ngSwitchCase="'mum'">Mumbai</span>
+<span *ngSwitchCase="'kol'">Kolkata</span>
+<span *ngSwitchCase="'bgl'">Bengaluru</span>
+</div>
+<hr>
+<div [ngSwitch]="citycode">
+    <span *ngSwitchCase="'044'">Chennai</span>
+    <span *ngSwitchCase="'080'">Mumbai</span>
+    <span *ngSwitchCase="'022'">Kolkata</span>
+    <span *ngSwitchCase="'011'">Bengaluru</span>
+    <span *ngSwitchDefault>Code/City not avaiable</span>
+    </div>
+</div>
+
+
+
+  
+ 

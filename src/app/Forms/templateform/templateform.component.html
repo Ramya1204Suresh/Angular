@@ -1,0 +1,27 @@
+<div>
+  Template Form Examples
+  <br>
+  <form #hobbyForm="ngForm" (ngSubmit)="submitDetail(hobbyForm.value)">
+    <label>
+      Name:
+    </label>
+    <input type="text"   
+    name="fn" [(ngModel)]="fullname" required pattern="[a-zA-Z]{4,65}" > {{fullname}}
+    <span [ngStyle]="{color:hobbyForm.invalid?'red':'Green'}">Minimum length is 4.Maximum length is 65,Only alphabets</span>
+    
+    <br>
+    <label>Age:</label> 
+    <input type="number" name="a" [(ngModel)]="age" required min="18" max="60"> {{age}}
+    <span [ngStyle]="{color:hobbyForm.controls.a.invalid?'red':'Green'}">Age Range is 18 to 60</span>
+    <br>
+    <label>Hobby:</label>
+    <select name="h" [(ngModel)]="hobby" >
+      <option value="hacking">Hacking</option>
+      <option value="driving">Driving</option>
+      <option value="trekking">Trekking</option>
+    </select> {{hobby}}
+    <br>
+    <hr>
+    <button type="submit" [disabled]="hobbyForm.invalid">Submit</button>
+  </form>
+</div>

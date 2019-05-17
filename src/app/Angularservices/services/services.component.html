@@ -1,0 +1,21 @@
+<div class="parent">
+  I am Services parent component
+  <br>
+  value of name in parent:{{name}}
+  <br>
+</div>
+<div class="child">
+  I am child:<app-childcomp (sendName)="name" (sendToParent)="receivedNewName($event)"></app-childcomp>
+</div>
+
+<li class="child1">
+  <a routerLink="consume1">consume1</a>
+
+</li>
+<li class="child2">
+  <a routerLink="consume2">consume2</a>
+
+</li>
+
+<router-outlet>
+  </router-outlet>

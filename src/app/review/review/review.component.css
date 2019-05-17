@@ -1,0 +1,29 @@
+.title
+{
+    border:10px;
+    width:1350px;
+    height:100px;
+    background:hotpink;
+    border-color:orange;
+}
+
+.thumbnail
+{
+    border:10px;
+    width:340px;
+    height:100px;
+    background:goldenrod;
+    float:left;
+    border-color: red;
+    margin:1px;
+}
+.desc
+{
+    border:10px;
+    border-color: aqua;
+    width:1000px;
+    height:100px;
+    float:right;
+    background:lavender;
+    margin:1px;
+}
