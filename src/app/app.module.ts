@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {RouterModule} from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FamilyComponent } from './nuclearfamily/family/family.component';
@@ -22,6 +25,7 @@ import { ChildcompComponent } from './Angularservices/childcomp/childcomp.compon
 import { NospecComponent } from './delete/nospec/nospec.component';
 import { TemplateformComponent } from './Forms/templateform/templateform.component';
 import { ReactiveorModuleComponent } from './Forms/reactiveor-module/reactiveor-module.component';
+import { AnimationComponent } from './animate/animation/animation.component';
 
 
 @NgModule({
@@ -45,12 +49,15 @@ import { ReactiveorModuleComponent } from './Forms/reactiveor-module/reactiveor-
     NospecComponent,
     TemplateformComponent,
     ReactiveorModuleComponent,
+    AnimationComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       {
         path:'',
@@ -122,6 +129,10 @@ import { ReactiveorModuleComponent } from './Forms/reactiveor-module/reactiveor-
       {
         path:'reactive',
         component:ReactiveorModuleComponent
+      },
+      {
+        path:'animate',
+        component:AnimationComponent
       },
       {
         path:'**',

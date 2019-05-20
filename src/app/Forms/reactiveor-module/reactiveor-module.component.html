@@ -1,3 +1,22 @@
-<p>
-  reactiveor-module works!
-</p>
+<div>
+  Reactive form:
+  <br>
+  <div>
+    <form [formGroup]='myForm' (ngSubmit)="submitForm(myForm)">
+      <label>Name:</label>
+      <input type ="text" formControlName="fn">
+      <br>
+      <label>Score:</label>
+      <input type="number" formControlName="score">
+      <br>
+      <select formControlName="hobby">
+        <option value="hacking">Hacking</option>
+        <option value="treking">trekking</option>
+        <option value="driving">driving</option>
+      </select>
+      <br>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
