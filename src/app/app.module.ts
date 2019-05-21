@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import {HttpClientModule} from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +26,7 @@ import { NospecComponent } from './delete/nospec/nospec.component';
 import { TemplateformComponent } from './Forms/templateform/templateform.component';
 import { ReactiveorModuleComponent } from './Forms/reactiveor-module/reactiveor-module.component';
 import { AnimationComponent } from './animate/animation/animation.component';
+import { RemoteComponent } from './restapi/remote/remote.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { AnimationComponent } from './animate/animation/animation.component';
     TemplateformComponent,
     ReactiveorModuleComponent,
     AnimationComponent,
+    RemoteComponent,
     
   ],
   imports: [
@@ -58,6 +60,7 @@ import { AnimationComponent } from './animate/animation/animation.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path:'',
@@ -133,6 +136,10 @@ import { AnimationComponent } from './animate/animation/animation.component';
       {
         path:'animate',
         component:AnimationComponent
+      },
+      {
+        path:'remote',
+        component:RemoteComponent
       },
       {
         path:'**',
