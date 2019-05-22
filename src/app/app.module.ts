@@ -27,6 +27,7 @@ import { TemplateformComponent } from './Forms/templateform/templateform.compone
 import { ReactiveorModuleComponent } from './Forms/reactiveor-module/reactiveor-module.component';
 import { AnimationComponent } from './animate/animation/animation.component';
 import { RemoteComponent } from './restapi/remote/remote.component';
+import { EmployeeDetailComponent } from './restapi/employee-detail/employee-detail.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { RemoteComponent } from './restapi/remote/remote.component';
     ReactiveorModuleComponent,
     AnimationComponent,
     RemoteComponent,
+    EmployeeDetailComponent,
     
   ],
   imports: [
@@ -140,6 +142,10 @@ import { RemoteComponent } from './restapi/remote/remote.component';
       {
         path:'remote',
         component:RemoteComponent
+      },
+      {
+        path:'remote/:id',
+        component:EmployeeDetailComponent
       },
       {
         path:'**',

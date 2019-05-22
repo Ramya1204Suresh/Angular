@@ -23,4 +23,43 @@
       </tr>
   </tbody>
   </table>
+  <br>
+  <hr>
+  <table class="tablestripe" border="2px">
+      <thead>
+          <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SALARY</th>
+            <th>AGE</th>
+            
+          </tr>
+      </thead>
+    <tbody>
+        <tr *ngFor="let e of employees">
+          <td>{{e.id}}</td>
+          <td>{{e.employee_name}}</td>
+          <td>{{e.employee_salary}}</td>
+          <td>{{e.employee_age}}</td>
+          <td><button (click)="getEmployeeDetails(e.id)">CHECK DETAILS</button></td>
+          <td><button (click)="deleteEmployee(e.id)">Delete Employee</button></td>
+        </tr>
+    </tbody>
+    </table>
+    <br>
+    <br>
+    <form [formGroup]="myEmpForm" (ngSubmit)="addEmployee(myEmpForm)">
+        <label>Name:</label>
+        <input type ="text" formControlName="name">
+        <br>
+        <label>Age:</label>
+        <input type="number" formControlName="age">
+        <br>
+        <label>salary:</label>
+        <input type="number" formControlName="salary">
+        <br>
+        <br>
+        <button type="submit" >Add Employee</button>
+      </form>
+    
 </div>
